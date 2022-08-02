@@ -6,7 +6,7 @@
     import axios from 'axios'
     import 'leaflet/dist/leaflet.css'
     const MapView = () => {
-        const center = [20.6763989, -103.3479102]
+        let center = [20.6763989, -103.3479102]
         const Options = { color: 'green' }
         const [api, setApi] = useState([])
         const [apiFolio, setApiFolio] = useState('')
@@ -24,7 +24,6 @@
         const obtener = async () => {
             let url = ''
             if (apiFolio) {
-
                 url = `https://pgm-apps.com/utils/apis/tianguis-gdl/?model=puestosespacios&id=${apiFolio}`
             } else if (apiNombre) {
                 url = `https://pgm-apps.com/utils/apis/tianguis-gdl/?model=puestosespacios&id=0&nombre=${apiNombre}`
@@ -40,10 +39,22 @@
                 }
                 setApi(resultado.data)
                 console.log(resultado.data)
+
+
             } catch (error) {
                 console.log(error)
             }
         }
+    
+        if(apiFolio){
+            api.map((cent)=>(
+                center=[cent.latitud,cent.longitud]
+                ))
+                center=[center[0],center[1]]
+        }
+    
+
+    
         return (
             //container principal
             <div className='bg-pink-500 w-full h-full  flex justify-evenly  rounded-lg p-10 sm:block'>
