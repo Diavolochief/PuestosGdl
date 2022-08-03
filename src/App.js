@@ -3,10 +3,10 @@ import MapView from './components/Maps'
 const App = () => {
   return (
     <>
-    <div className='h-full  w-full bg-red-50 p-11'>
+    <div className='h-full sm:h-3/4 w-full bg-red-50 p-11 sm:p-2 '>
     <MapView/>
     </div>
-    <footer class="block py-4 fixed-bottom w-full  sm:z-0 bg-red-50 ">
+    <footer class="block py-4 fixed-bottom w-full   bg-red-50 ">
     <div class="container mx-auto justify-center ">
         <hr class="mb-4 border-b-1 border-slate-200" />
         <div class="flex flex-wrap items-center md:justify-between justify-center">

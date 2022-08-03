@@ -57,13 +57,20 @@
     
         return (
             //container principal
-            <div className='bg-pink-500 w-full h-full  flex justify-evenly  rounded-lg p-10 sm:block'>
+            <div className='bg-pink-500 w-full h-full  flex justify-evenly  rounded-lg p-10  sm:p-5 sm:block'>
                 <div className='flex justify-center flex-col m-auto'>
                     <img
                     className='sm:hidden'   
                         src={require('./assets/escudo.png')}
                         style={{ width: '50%', height: '50%', margin: 'auto' }}
                     />
+                    
+                    <img
+                    className='  hidden sm:flex sm:justify-start'  
+                        src={require('./assets/escudo.png')}
+                        style={{ width: '25%', height: '25%', margin: 'auto' }}
+                    />
+
                     <hr className='w-full mb-7 sm:hidden'></hr>
                     <div className='mb-5 w-full'>
                         <h5 className='text-white text-start '>Ingresa el folio</h5>
