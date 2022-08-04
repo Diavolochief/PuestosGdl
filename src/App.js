@@ -14,7 +14,7 @@ const App = () => {
                     <div class="flex flex-wrap items-center md:justify-between justify-center">
                         <div class="w-full px-4">
                             <div class=" text-xs text-slate-500 font-semibold py-1 text-center md:text-center">
-                                Mapa de Puestos V 0.1.0 © <span id="get-current-year"></span>
+                                Mapa de Puestos V 0.1.0 © <span >2022</span>
                                 | Hecho con 💜 por <a href="https://www.perspective.com.mx" target="_blank"
                                     class="text-purple-500 hover:underline">Perspective Global de México</a>
                             </div>
