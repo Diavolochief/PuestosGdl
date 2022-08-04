@@ -1,6 +1,6 @@
 
 import React, { useState, useEffect } from 'react'
-import { MapContainer, Popup, Marker, TileLayer, CircleMarker } from 'react-leaflet'
+import { MapContainer, Popup, TileLayer, CircleMarker } from 'react-leaflet'
 import RiseLoader from "react-spinners/RiseLoader";
 import axios from 'axios'
 import 'leaflet/dist/leaflet.css'
@@ -63,7 +63,7 @@ const MapView = () => {
                     src={require('./assets/escudo.png')}
                     style={{ width: '50%', height: '50%', margin: 'auto' }}
                 />
-
+                {/* creo dos imagenes para trabajar bajo  responsive desing sin desproporcionarla en md */}
                 <img
                     className=' sm:block hidden'
                     src={require('./assets/escudo.png')}
@@ -74,6 +74,7 @@ const MapView = () => {
                 <div className='mb-5 w-full'>
                     <h5 className='text-white text-start '>Ingresa el folio</h5>
                     <input
+                        required
                         onChange={(event => { setApiFolio(event.target.value) })}
                         className='bg-white w-full h-9'
                         placeholder='ej...8463' />
@@ -105,13 +106,14 @@ const MapView = () => {
                     </h1>
                     <RiseLoader color={'white'} loading={loader} size={40} /></div>) :
                     <MapContainer
-                            style={{ width: '100%', height: '70vh' }}
+                        style={{ width: '100%', height: '70vh' }}
                         center={center}
                         zoom={13}>
                         <TileLayer
                             attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
                             url='https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'
                         >
+                            {/* api que mapeara el objeto y  */}
                         </TileLayer>
                         {
                             api.map((text) => (
